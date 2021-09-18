@@ -1,0 +1,132 @@
+
+.kr_header {
+  background-color: #3b3b3b;
+
+  .kr_header_inner {
+    width: 1170px;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  // 头部导航
+  .navs {
+    display: flex;
+    margin-left: 140px;
+    color: #fff;
+    
+    // 一级导航
+    > li {
+      width: 120px;
+      text-align: center;
+      position: relative;
+      transition: background-color .5s;
+      
+      // 鼠标悬停交互
+      &:hover {
+        background-color: #4285f4;
+
+        .list {
+          top: 44px;
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+    }
+    
+    // new 标识
+    > .is_new:before {
+      width: 18px;
+      height: 10px;
+      transform: scale(0.85);
+
+      right: 12px;
+      top: 10px;
+    }
+
+    .label {
+      display: block;
+      line-height: 44px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+    
+    // 二级导航
+    .list {
+      width: 120px;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+      background-color: #fff;
+
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: opacity .2s, top 0.2s, transform .2s .2s;
+
+      position: absolute;
+      top: 0;
+      z-index: 10;
+
+      li {
+        height: 38px;
+        line-height: 38px;
+        border-top: 1px solid #f2f2f2;
+        font-size: 12px;
+
+        &:hover {
+          background-color: #f5f7f9;
+
+          a {
+            color: #4285f4;
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        color: #262626;
+        position: relative;
+
+        &.reddot:before {
+          content: '';
+          display: block;
+          width: 4px;
+          height: 4px;
+          background-color: #ff6262;
+          border-radius: 50%;
+          position: absolute;
+          top: 14px;
+          right: -7px;
+        }
+      }
+    }
+  }
+  
+  // 搜索、登录按钮
+  .extra {
+    width: 120px;
+    text-align: right;
+    line-height: 44px;
+
+    a {
+      color: #fff;
+    }
+
+    .search_btn {
+      margin-right: 38px;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+        background-image: url(../images/icon_search.png);
+        background-size: contain;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,571 @@
+
+// 公共布局结构
+.kr_layout {
+  width: 1170px;
+  margin: 20px auto 0;
+  position: relative;
+}
+
+// 左侧公共菜单
+.kr_menu {
+  width: 125px;
+  padding: 10px 25px 40px 0;
+  float: left;
+
+  position: sticky;
+  top: 20px;
+  left: 0;
+
+  .logo {
+    width: 68px;
+    height: 38px;
+    text-indent: -9999px;
+    position: relative;
+    float: right;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 0;
+      border-bottom: 1px solid #ddd;
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+    }
+  }
+  
+  // 菜单
+  .menus {
+    margin-top: 75px;
+
+    > li {
+      text-align: right;
+      line-height: 36px;
+      font-size: 18px;
+      position: relative;
+
+      > a {
+        line-height: 1;
+        padding: 4px 7px 3px 8px;
+        position: relative;
+        right: -7px;
+
+        &.active, &:hover {
+          color: #fff;
+          background-color: #4285f4;
+        }
+        
+        // 上新图标
+        &.is_new:before {
+          width: 18px;
+          height: 10px;
+          left: -20px;
+          top: 4px;
+        }
+      }
+    }
+    
+    // 三角图标
+    .triangle {
+      display: block;
+      width: 11px;
+      height: 10px;
+      cursor: pointer;
+      background-position: 0 -40px;
+      transition: transform .5s;
+
+      position: absolute;
+      left: 36px;
+      top: 14px;
+    }
+
+    // 子菜单
+    .sub_menus {
+      width: 140px;
+      height: 0;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      left: -24px;
+
+      transition: height .5s;
+
+      li {
+        flex: 1;
+      }
+    
+      a {
+        display: block;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        font-size: 14px;
+        color: #787878;
+
+        &:hover {
+          color: #4d7fd0;
+        }
+
+        &.active {
+          color: #4285f4;
+        }
+      }
+    }
+
+    .collapsed {
+
+      .triangle {
+        transform: rotate(-180deg);
+      }
+
+      .sub_menus {
+        height: 140px;
+      }
+    }
+  }
+
+  // 搜索按钮
+  .search_btn {
+    display: block;
+    width: 58px;
+    height: 42px;
+    text-align: right;
+    line-height: 42px;
+    margin: 15px 0 20px;
+    font-size: 16px;
+    color: #262626;
+    float: right;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-image: url(../images/sprites.png);
+      background-position: 0 -60px;
+      background-size: 246px auto;
+      position: relative;
+      top: 4px;
+      left: -5px;
+    }
+  }
+
+  // 其它
+  .extra {
+    padding-bottom: 8px;
+    clear: both;
+
+    li {
+      line-height: 1;
+      padding: 8px 0 6px 10px;
+      margin-bottom: 10px;
+      border: 1px solid #4387f4;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #4387f4;
+
+        a {
+          color: #fff;
+        }
+
+        a.report {
+          background-position: 0 -92px;
+        }
+
+        a.contribution {
+          background-position: 0 -890px;
+        }
+
+        a.finance {
+          background-position: 0 -998px;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      color: #4387f4;
+      text-indent: 20px;
+
+      &.report {
+        background-position: 0 -78px;
+      }
+
+      &.contribution {
+        background-position: 0 -876px;
+      }
+
+      &.finance {
+        background-position: 0 -984px;
+      }
+    }
+  }
+}
+
+// 右侧边栏
+.kr_aside {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  margin: 40px 0;
+  
+  // 挂件
+  .kr_widget {
+    margin-top: 40px;
+  }
+
+  .kr_widget_header {
+    font-size: 20px;
+    color: #262626;
+
+    .line {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-position: 0 -125px;
+      position: relative;
+      top: 1px;
+    }
+
+    a {
+      float: right;
+      font-size: 13px;
+      color: #787878;
+      margin-top: 8px;
+    }
+  }
+  
+  // 时光轴
+  .timeline {
+    margin: 20px 0 0 6px;
+    padding-left: 15px;
+    border-left: 1px solid #f3f3f3;
+
+    li {
+      margin-bottom: 15px;
+      position: relative;
+
+      &:not(:last-child):before {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 4px solid #b3ccf4;
+
+        position: absolute;
+        top: 5px;
+        left: -22px;
+      }
+    }
+
+    a {
+      font-size: 14px;
+      color: #262626;
+      line-height: 22px;
+
+      &:hover {
+        color: #4d7fd0;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #a7a7a7;
+    }
+
+    .more {
+      display: block;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      border: 1px solid #4285f4;
+      font-size: 14px;
+      color: #4285f4;
+      border-radius: 2px;
+
+      &:hover {
+        color: #fff;
+        background-color: #b3ccf4;
+        border: none;
+      }
+    }
+  }
+
+  // 直播卡片
+  .kr_live_card {
+    margin: 20px 0 30px;
+
+    .label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      
+      line-height: 1;
+      padding: 5px 3px 3px 8px;
+      color: #fff;
+      background-color: #027aff;
+      letter-spacing: 4px;
+      font-size: 12px;
+    }
+
+    .meta {
+      background-color: #f1f3f4;
+      padding: 8px 10px 10px;
+      font-weight: 700;
+
+      a {
+        line-height: 20px;
+        color: #262626;
+        font-size: 14px;
+
+        &:hover {
+          color: #4d7fd0;
+        }
+      }
+
+      p {
+        margin-top: 5px;
+        color: #4285f4;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // 主题卡片
+  .kr_topic_card {
+    margin: 20px 0 30px;
+
+    .header {
+      height: 42px;
+      padding: 9px 10px;
+      margin-bottom: 10px;
+      background-color: #f8f9fa;
+      font-size: 14px;
+      color: #262626;
+      border-radius: 2px;
+
+      a {
+        line-height: 24px;
+        float: right;
+        font-size: 13px;
+        color: #787878;
+      }
+    }
+
+    .link {
+      display: block;
+      margin-top: 10px;
+      line-height: 20px;
+      font-size: 14px;
+      color: #262626;
+    }
+  }
+
+  // 24小时热榜
+  .kr_hot_card {
+    height: 70px;
+    margin-top: 10px;
+    position: relative;
+
+    &:first-of-type {
+      margin-top: 18px;
+
+      &:before {
+        background-position: 0 -153px;
+      }
+    }
+
+    &:nth-of-type(2):before {
+      background-position: 0 -191px;
+    }
+
+    &:before {
+      content: attr(data-index);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      padding: 3px 5px;
+      color: #fff;
+      background-color: rgba(38, 38, 38, .5);
+    }
+
+    a {
+      display: flex;
+    }
+
+    .img-effect {
+      width: 105px;
+    }
+
+    span {
+      flex: 1;
+      margin-left: 10px;
+      line-height: 20px;
+      font-size: 13px;
+      color: #262626;
+      font-weight: 500;
+    }
+    
+    i {
+      font-size: 12px;
+      color: #a7a7a7;
+      position: absolute;
+      left: 115px;
+      bottom: 0;
+    }
+
+    &:nth-of-type(-n+2) {
+      height: 200px;
+
+      .img-effect {
+        width: 300px;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+
+      &:before {
+        width: 50px;
+        height: 32px;
+        left: -10px;
+        color: transparent;
+        background-image: url(../images/sprites.png);
+        background-size: 246px auto;
+        background-color: transparent;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          -180deg,
+          transparent 13%,
+          rgba(0, 0, 0, .65)
+          97%
+        );
+      }
+
+      span {
+        margin: 10px 10px 15px;
+        font-size: 14px;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        z-index: 9;
+
+        &:hover {
+          color: #4d7fd0;
+        }
+      }
+    }
+  }
+
+  // 精选主题
+  .kr_best {
+    position: sticky;
+    top: 20px;
+  }
+  .kr_best_card {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 15px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  
+    a {
+      display: flex;
+
+      &:hover {
+        color: #4d7fd0;
+      }
+    }
+
+    .img-effect {
+      width: 60px;
+      height: 60px;
+      border-radius: 2px;
+      cursor: pointer;
+      float: left;
+    }
+
+    .meta {
+      height: 60px;
+      padding: 5px 0;
+      margin-left: 70px;
+
+      a {
+        font-size: 14px;
+        color: #262626;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 13px;
+        color: #999ca0;
+      }
+    }
+
+    .extra {
+      margin-top: 10px;
+
+      a {
+        font-size: 13px;
+        color: #787878;
+        margin-bottom: 6px;
+
+        &:hover {
+          color: #4d7fd0;
+        }
+      }
+
+      span {
+        font-size: 12px;
+        color: #a7a7a7;
+      }
+    }
+  }
+}
+
+// 主体
+.kr_body {
+  margin: 30px 320px 30px 140px;
+
+  // 查看更多
+  .kr_more {
+    margin-top: 20px;
+
+    a {
+      display: block;
+      width: 140px;
+      text-align: center;
+      line-height: 1;
+      padding: 10px 0 8px;
+      font-size: 16px;
+      color: #4285f4;
+      border: 1px solid #4285f4;
+      margin: 0 auto;
+      
+      &:hover {
+        color: #fff;
+        background-color: #4285f4;
+      }
+    }
+  }
+}

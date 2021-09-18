@@ -1,0 +1,158 @@
+
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body, {
+  // min-height: 4000px;
+  color: #787878;
+  font: 14px/1.5 PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,微软雅黑,STHeitiSC-Light,simsun,宋体,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif";
+  -webkit-font-smoothing: antialiased;
+}
+
+ul, h1, h3, h4, p, dl, dd {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+i {
+  font-style: normal;
+}
+
+input, textarea {
+  outline: none;
+  padding: 0;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.viewport {
+  min-width: 1280px;
+}
+
+.sprites {
+  background-image: url(../images/sprites.png);
+  background-size: 246px auto;
+}
+
+.is_new:before {
+  content: '';
+  display: block;
+  background-image: url(../images/icon_new.png);
+  background-size: contain;
+
+  position: absolute;
+}
+
+// 广告
+.ad {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+    line-height: 18px;
+    font-size: 12px;
+    padding: 0 5px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: .5px 2px .5px .5px;
+  }
+}
+
+.text_overflow {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.img-effect {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    transition: transform .3s;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+}
+
+.border-effect {
+  transition: box-shadow .2s linear;
+
+  &:hover {
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .15);
+  }
+}
+
+.video {
+  position: relative;
+
+  .sprites {
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin: -19px 0 0 -19px;
+    background-position: 0 -388px;
+    cursor: pointer;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  .time {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+    line-height: 18px;
+    padding: 0 4px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+  }
+}

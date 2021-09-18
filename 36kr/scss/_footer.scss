@@ -1,0 +1,143 @@
+
+// 底部
+.kr_footer {
+  background-color: #2d3237;
+}
+
+.kr_footer_inner {
+  width: 1280px;
+  padding: 30px 55px 0 195px;
+  margin: 0 auto;
+
+  .kr_links {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #3b424a;
+  }
+  
+  .kr_about {
+    width: 160px;
+
+    dd {
+      width: 80px;
+      margin-bottom: 13px;
+      float: left;
+
+      &:nth-child(odd) {
+        text-align: right;
+      }
+
+      a {
+        line-height: 24px;
+        font-size: 14px;
+        color: #fff;
+        opacity: .7;
+      }
+
+      &:hover a {
+        opacity: 1;
+      }
+    }
+  }
+
+  .kr_collaborator {
+    width: 530px;
+
+    dd {
+      width: 68px;
+      height: 30px;
+      margin-right: 20px;
+      margin-bottom: 12px;
+      float: left;
+      opacity: .6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .kr_download {
+    width: 100px;
+    margin-right: 64px;
+
+    span {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+    }
+  }
+
+  dt {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .kr_copyright {
+    text-align: center;
+    padding: 0 180px 20px 170px;
+    font-size: 12px;
+    position: relative;
+
+    p {
+      line-height: 1;
+      margin-top: 20px;
+      color: #666;
+
+      &:first-child {
+        color: #fff;
+
+        a {
+          color: #fff;
+        }
+
+        span {
+          color: #666;
+        }
+      }
+
+      &:last-of-type {
+
+        a {
+          color: #666;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .sprites {
+      position: absolute;
+    }
+
+    .logo {
+      left: 0;
+      top: 0;
+      width: 32px;
+      height: 18px;
+      background-position: 0 -810px;
+    }
+
+    .rss {
+      right: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background-position: 0 -852px;
+    }
+
+    .weibo {
+      top: 0;
+      right: 30px;
+      width: 24px;
+      height: 24px;
+      background-position: 0 -828px;
+    }
+  }
+}
