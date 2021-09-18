@@ -1,0 +1,49 @@
+.topbar {
+  display: flex;
+  width: 10rem;
+  height: 1.2rem;
+  background-color: #d43c33;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+
+.topbar .search {
+  flex: 1;
+  margin: 0.16rem 0;
+  position: relative;
+  border-radius: 0.426667rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 0.4rem;
+}
+
+.topbar input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 0.426667rem;
+  background-color: transparent;
+  color: #F2F2F2;
+}
+
+.topbar a {
+  width: 1.173333rem;
+  height: 1.173333rem;
+  background-size: 0.746667rem 0.746667rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.topbar .vdo {
+  background-image: url("../images/cm4_act_icn_video@2x.png");
+}
+
+.topbar .mic {
+  background-image: url(../images/cm2_topbar_icn_mic@2x.png);
+}
+
+.topbar .playing {
+  background-image: url(../images/cm2_topbar_icn_playing@2x.png);
+}

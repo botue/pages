@@ -1,0 +1,74 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+  width: 10rem;
+}
+
+.footer .tabbar {
+  display: flex;
+  justify-content: space-between;
+  height: 1.32rem;
+  padding: 0.2rem 0.64rem 0;
+  border-top: 1px solid #c8c8c8;
+  background-color: rgba(236, 236, 236, 0.99);
+}
+
+.footer a {
+  display: block;
+  text-align: center;
+  color: #969696;
+  font-size: 0.28rem;
+}
+
+.footer a:before {
+  content: '';
+  display: block;
+  width: 0.68rem;
+  height: 0.68rem;
+  background-size: contain;
+}
+
+.footer a.active {
+  color: #c3473a;
+}
+
+.footer .disc_icn:before {
+  background-image: url(../images/cm4_btm_icn_discovery@2x.png);
+}
+
+.footer .disc_icn.active:before {
+  background-image: url(../images/cm4_btm_icn_discovery_prs@2x.png);
+}
+
+.footer .video_icn:before {
+  background-image: url(../images/cm4_btm_icn_video@2x.png);
+}
+
+.footer .video_icn.active:before {
+  background-image: url(../images/cm4_btm_icn_video_prs@2x.png);
+}
+
+.footer .music_icn:before {
+  background-image: url(../images/cm4_btm_icn_music@2x.png);
+}
+
+.footer .music_icn.active:before {
+  background-image: url(../images/cm4_btm_icn_music_prs@2x.png);
+}
+
+.footer .friend_icn:before {
+  background-image: url(../images/cm4_btm_icn_friend@2x.png);
+}
+
+.footer .friend_icn.active:before {
+  background-image: url(../images/cm4_btm_icn_friend_prs@2x.png);
+}
+
+.footer .account_icn:before {
+  background-image: url(../images/cm4_btm_icn_account@2x.png);
+}
+
+.footer .account_icn.active:before {
+  background-image: url(../images/cm4_btm_icn_account_prs@2x.png);
+}

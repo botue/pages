@@ -1,0 +1,755 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  display: block;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+input {
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.viewport {
+  width: 10rem;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.play {
+  width: 0.96rem;
+  height: 0.96rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.play:after {
+  content: '';
+  display: block;
+  border-width: 0.24rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #c3473a;
+  transform: translate(0, -50%) scale(1.3, 0.9);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.discovery {
+  height: 100%;
+  padding-top: 2.44rem;
+  padding-bottom: 1.32rem;
+  overflow: hidden;
+  /* Tabs */
+  /* 焦点图 */
+  /* 导航 */
+  /* 板块 */
+  /* 列表 */
+  /* 会员专区 */
+  /* 卡片布局 */
+  /* 推荐 */
+  /* 加载状态 */
+  /* 今日优选 */
+}
+
+.discovery .tabs {
+  display: flex;
+  width: 10rem;
+  height: 1.24rem;
+  padding: 0.32rem 2rem 0;
+  justify-content: space-between;
+  font-size: 0.36rem;
+  background-color: #d43c33;
+  position: fixed;
+  top: 1.2rem;
+  z-index: 9;
+}
+
+.discovery .tabs.switch:after {
+  left: 6.4rem;
+}
+
+.discovery .tabs:after {
+  content: '';
+  display: block;
+  width: 0.8rem;
+  height: 0.08rem;
+  margin: 0 0.4rem;
+  background-color: #FFF;
+  border-radius: 0.08rem;
+  transition: left 0.2s;
+  position: absolute;
+  left: 2rem;
+  bottom: 0.32rem;
+}
+
+.discovery .tabs a {
+  color: #FFF;
+}
+
+.discovery .tabs a.active {
+  font-weight: 600;
+}
+
+.discovery .pages-slide {
+  height: 100%;
+}
+
+.discovery .pages-slide .swiper-wrapper {
+  height: 100%;
+}
+
+.discovery .pages-slide .swiper-slide {
+  height: 100%;
+  background-color: #F2F2F2;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.discovery .banner {
+  height: 3.48rem;
+  padding: 0 0.16rem;
+  border-bottom: 1rem solid #FFF;
+  background-color: #d43c33;
+  box-sizing: content-box;
+}
+
+.discovery .banner a {
+  color: #FFF;
+}
+
+.discovery .banner .banner-slide {
+  height: 4.48rem;
+  border-radius: 0.12rem;
+}
+
+.discovery .banner .banner-slide .swiper-pagination-bullets {
+  bottom: 0.08rem;
+}
+
+.discovery .banner .banner-slide .swiper-slide {
+  position: relative;
+}
+
+.discovery .banner .banner-slide .flag {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 0.533333rem;
+  line-height: 0.533333rem;
+  padding: 0 0.32rem;
+  border-radius: 0.12rem 0 0 0;
+  color: #FFF;
+  font-size: 0.32rem;
+}
+
+.discovery .banner .banner-slide .player {
+  background-color: #d43c33;
+}
+
+.discovery .banner .banner-slide .web {
+  background-color: #7db9e4;
+}
+
+.discovery .banner .banner-slide .bullet {
+  display: inline-block;
+  width: 0.16rem;
+  height: 0.16rem;
+  margin: 0 0.06rem;
+  background-color: #808080;
+  border-radius: 50%;
+}
+
+.discovery .banner .banner-slide .bullet-active {
+  background-color: #c2473a;
+}
+
+.discovery .navs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.48rem 0.586667rem;
+  border-bottom: 1px solid #e2e2e3;
+  background-color: #FFF;
+}
+
+.discovery .navs a {
+  display: block;
+  text-align: center;
+  font-size: 0.32rem;
+  color: #323233;
+}
+
+.discovery .navs a:before {
+  content: '';
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  margin-bottom: 0.16rem;
+  border-radius: 50%;
+  background-color: #d43c33;
+  background-size: contain;
+}
+
+.discovery .navs .fm:before {
+  background-image: url(../images/cm5_disc_topbtn_fm-ip6@2x.png);
+}
+
+.discovery .navs .daily:before {
+  box-sizing: border-box;
+  content: attr(data-date);
+  color: #FFF;
+  padding-top: 0.56rem;
+  font-size: 0.28rem;
+  background-image: url(../images/cm5_disc_topbtn_daily-ip6@2x.png);
+}
+
+.discovery .navs .list:before {
+  background-image: url(../images/cm5_disc_topbtn_list-ip6@2x.png);
+}
+
+.discovery .navs .rank:before {
+  background-image: url(../images/cm5_disc_topbtn_rank-ip6@2x.png);
+}
+
+.discovery .navs .cat:before {
+  background-image: url(../images/cm4_disc_radio_category_btn-ip6@2x.png);
+}
+
+.discovery .navs .fee:before {
+  background-image: url(../images/cm4_disc_radio_feebest_btn-ip6@2x.png);
+}
+
+.discovery .navs .top:before {
+  background-image: url(../images/cm4_disc_radio_toplist_btn-ip6@2x.png);
+}
+
+.discovery .navs .xb:before {
+  background-image: url(../images/cm4_disc_radio_xiaobing_btn-ip6@2x.png);
+}
+
+.discovery .section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0.16rem;
+  background-color: #FFF;
+}
+
+.discovery .section .title {
+  line-height: 1;
+  padding: 0.48rem 0.4rem 0.4rem 0;
+  font-size: 0.44rem;
+  color: #323232;
+  background-image: url(../images/cm4_disc_title_arr@2x.png);
+  background-size: 0.21rem;
+  background-repeat: no-repeat;
+  background-position: right 0.51rem;
+}
+
+.discovery .items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.discovery .items .item {
+  width: 3.173333rem;
+  height: 4.16rem;
+  margin-bottom: 0.48rem;
+  position: relative;
+}
+
+.discovery .items .item img {
+  width: 3.173333rem;
+  height: 3.173333rem;
+  border-radius: 0.12rem;
+  margin-bottom: 0.12rem;
+}
+
+.discovery .items .item span {
+  display: block;
+  height: 0.88rem;
+  font-size: 0.32rem;
+  color: #323232;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.discovery .items i.count {
+  line-height: 1;
+  padding-left: 0.35rem;
+  background-repeat: no-repeat;
+  background-image: url("../images/cm4_cover_icn_music@2x.png");
+  color: #FFF;
+  font-size: 0.28rem;
+  font-style: normal;
+  position: absolute;
+  top: 0.12rem;
+  right: 0.2rem;
+}
+
+.discovery .items i.hot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-size: cover;
+  background-image: url(../images/cm2_list_sup_hot_sml@2x.png);
+}
+
+.discovery .member {
+  height: 7.92rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.discovery .member .mask {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.discovery .member .title {
+  text-align: center;
+  line-height: 1;
+  margin: 0.6rem 0 0.48rem;
+  font-size: 0.44rem;
+  color: #d2d0d1;
+  position: relative;
+  z-index: 9;
+}
+
+.discovery .member .member-slide {
+  height: 4.56rem;
+}
+
+.discovery .member .swiper-slide {
+  width: 8.56rem;
+  margin: 0 0.16rem;
+  background-color: #FFF;
+  border-radius: 0.16rem;
+  overflow: hidden;
+}
+
+.discovery .member .go {
+  width: 3.2rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  margin: 0.52rem auto 0;
+  color: #f5fcff;
+  font-size: 0.32rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.8rem;
+  position: relative;
+  z-index: 9;
+}
+
+.discovery .member .go:after {
+  content: '';
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.32rem;
+  margin-left: 0.12rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0.04rem;
+  background-image: url(../images/cm2_act_icn_arr@2x.png);
+}
+
+.discovery .card {
+  display: flex;
+  padding: 0.4rem 0.16rem;
+  margin: 0.133333rem 0 0;
+  background-color: #FFF;
+}
+
+.discovery .card .cover {
+  width: 3.173333rem;
+  height: 3.173333rem;
+  border-radius: 0.12rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.discovery .card.vd .time {
+  display: block;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #FFF;
+  font-size: 0.24rem;
+  position: absolute;
+  right: 0.12rem;
+  bottom: 0.12rem;
+}
+
+.discovery .card .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.2rem;
+}
+
+.discovery .card .meta {
+  flex: 1;
+}
+
+.discovery .card .name {
+  line-height: 1.5;
+  margin-bottom: 0.16rem;
+  font-size: 0.4rem;
+}
+
+.discovery .card .type {
+  padding: 0 0.08rem;
+  margin-right: 0.12rem;
+  border: 1px solid #cb5150;
+  color: #cb5150;
+  font-size: 0.24rem;
+  position: relative;
+  top: -0.04rem;
+}
+
+.discovery .card .count, .discovery .card .comment {
+  padding-left: 0.4rem;
+  font-size: 0.28rem;
+  color: #989898;
+  background-repeat: no-repeat;
+  background-size: 0.32rem;
+  background-position: left center;
+}
+
+.discovery .card .count {
+  background-image: url(../images/cm4_discover_play_cnt_icn@2x.png);
+}
+
+.discovery .card .comment {
+  margin-left: 0.12rem;
+  background-image: url(../images/cm4_list_icn_cmt@2x.png);
+}
+
+.discovery .card .author {
+  display: flex;
+  align-items: flex-end;
+  height: 1.0rem;
+  line-height: 0.68rem;
+  margin-bottom: 0.08rem;
+  border-top: 1px solid #e2e2e2;
+  font-size: 0.32rem;
+}
+
+.discovery .card .avatar {
+  width: 0.68rem;
+  height: 0.68rem;
+  margin-right: 0.16rem;
+  position: relative;
+}
+
+.discovery .card .avatar img {
+  display: block;
+  border-radius: 50%;
+}
+
+.discovery .card .v:after {
+  content: '';
+  width: 0.28rem;
+  height: 0.28rem;
+  background-size: cover;
+  background-image: url("../images/cm2_icn_v_tiny@2x.png");
+  position: absolute;
+  right: -0.08rem;
+  bottom: 0;
+}
+
+.discovery .recommend {
+  padding: 0 0.16rem;
+  margin-top: 0.133333rem;
+  background-color: #FFF;
+}
+
+.discovery .recommend h4 {
+  line-height: 1;
+  padding: 0.4rem 0;
+  font-size: 0.4rem;
+  color: #323232;
+  font-weight: normal;
+}
+
+.discovery .recommend .cover {
+  position: relative;
+  border-radius: 0.12rem;
+  overflow: hidden;
+}
+
+.discovery .recommend .label {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.28rem;
+  padding-left: 0.2rem;
+  padding-top: 0.5rem;
+  font-size: 0.4rem;
+  color: #FFF;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.discovery .recommend .meta {
+  padding: 0.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discovery .recommend .author {
+  display: flex;
+  align-items: center;
+  height: 1.0rem;
+  line-height: 0.68rem;
+  font-size: 0.32rem;
+}
+
+.discovery .recommend .avatar {
+  width: 0.68rem;
+  height: 0.68rem;
+  margin-right: 0.16rem;
+  position: relative;
+}
+
+.discovery .recommend .avatar img {
+  display: block;
+  border-radius: 50%;
+}
+
+.discovery .recommend .v:after {
+  content: '';
+  width: 0.28rem;
+  height: 0.28rem;
+  background-size: cover;
+  background-image: url("../images/cm2_icn_v_tiny@2x.png");
+  position: absolute;
+  right: -0.08rem;
+  bottom: 0;
+}
+
+.discovery .recommend .focus {
+  width: 1.64rem;
+  height: 0.68rem;
+  text-align: center;
+  line-height: 0.68rem;
+  padding-left: 0.5rem;
+  color: #FFF;
+  border-radius: 0.68rem;
+  background-color: #e55d4c;
+  background-size: 0.32rem;
+  background-position: 0.3rem center;
+  background-repeat: no-repeat;
+  background-image: url("../images/cm2_pro_btn_icn_add@2x.png");
+}
+
+.discovery .loading {
+  text-align: center;
+  padding: 0.28rem 0;
+  color: #666;
+  background-color: #FFF;
+}
+
+.discovery .best {
+  height: 8.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.discovery .best .mask {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.discovery .best .title {
+  text-align: center;
+  line-height: 1;
+  margin: 0.6rem 0 0.2rem;
+  font-size: 0.44rem;
+  color: #d6d6d6;
+  position: relative;
+  z-index: 9;
+}
+
+.discovery .best h5 {
+  text-align: center;
+  margin-bottom: 0.48rem;
+  font-size: 0.28rem;
+  color: #9e9c9c;
+  position: relative;
+  z-index: 9;
+}
+
+.discovery .best ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.16rem;
+}
+
+.discovery .best li {
+  width: 3.173333rem;
+  height: 4.92rem;
+  background-color: #FFF;
+  border-radius: 0.16rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.discovery .best img {
+  border-radius: 0.16rem 0.16rem 0 0;
+}
+
+.discovery .best p {
+  padding: 0.16rem 0.16rem 0;
+  font-size: 0.32rem;
+}
+
+.discovery .best .price {
+  position: absolute;
+  left: 0.12rem;
+  bottom: 0.2rem;
+  color: #c3473a;
+}
+
+.discovery .best .go {
+  width: 3.2rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  margin: 0.52rem auto 0;
+  color: #f5fcff;
+  font-size: 0.32rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.8rem;
+  position: relative;
+  z-index: 9;
+}
+
+.discovery .best .go:after {
+  content: '';
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.32rem;
+  margin-left: 0.12rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0.04rem;
+  background-image: url(../images/cm2_act_icn_arr@2x.png);
+}
+
+.discovery .today {
+  padding-bottom: 0.36rem;
+  background-color: #FFF;
+}
+
+.discovery .today .title {
+  line-height: 1;
+  padding: 0.52rem 0.2rem;
+  font-size: 0.44rem;
+  color: #393939;
+}
+
+.discovery .today .refresh {
+  float: right;
+  line-height: 0.44rem;
+  padding-left: 0.5rem;
+  font-size: 0.28rem;
+  color: #616161;
+  background-image: url(../images/cm2_act_refresh@2x.png);
+  background-repeat: no-repeat;
+  background-size: 0.4rem;
+  background-position: left center;
+}
+
+.discovery .today li {
+  display: flex;
+  padding-left: 0.16rem;
+  margin-bottom: 0.16rem;
+}
+
+.discovery .today img {
+  width: 2.68rem;
+  height: 2.68rem;
+  border-radius: 0.12rem;
+}
+
+.discovery .today .meta {
+  flex: 1;
+  height: 2.84rem;
+  padding-top: 0.48rem;
+  margin-left: 0.28rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.discovery .today .meta span {
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.28rem;
+  color: #7d7d7d;
+  font-size: 0.32rem;
+}
+
+.discovery .today .meta .name {
+  margin-bottom: 0.4rem;
+  font-size: 0.36rem;
+  color: #333;
+  font-weight: 600;
+}

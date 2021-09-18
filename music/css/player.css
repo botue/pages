@@ -1,0 +1,205 @@
+/*@import 'global';*/
+.player {
+  width: 10rem;
+  height: 100%;
+  background-color: #FFF;
+  transform: translate(100%);
+  transition: transform .5s;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.player.in {
+  transform: translate(0);
+}
+
+.player .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  -webkit-fliter: blur(65px);
+  filter: blur(65px);
+}
+
+.player .toptab {
+  height: 1.2rem;
+  margin-top: 0.2rem;
+  display: flex;
+}
+
+.player .toptab a {
+  display: block;
+  width: 1.2rem;
+  background-repeat: no-repeat;
+  background-size: auto 0.6rem;
+  background-position: center;
+}
+
+.player .toptab .back {
+  background-image: url(../images/cm2_act_view_btn_back@2x.png);
+}
+
+.player .toptab .more {
+  background-image: url(../images/cm2_topbar_icn_more@2x.png);
+}
+
+.player .toptab .tabs {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+}
+
+.player .toptab span {
+  display: block;
+  width: 1.2rem;
+  text-align: center;
+  padding-top: 1.1rem;
+  background-size: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #CCC;
+  font-size: 0.24rem;
+}
+
+.player .toptab .active {
+  color: #FFF;
+}
+
+.player .toptab .song {
+  background-image: url(../images/cm2_fm_nav_personal_prs@2x.png);
+}
+
+.player .toptab .run {
+  background-image: url(../images/cm2_fm_nav_run@2x.png);
+}
+
+.player .cover {
+  width: 8.12rem;
+  height: 8.12rem;
+  margin: 0.8rem auto;
+}
+
+.player .cover img {
+  width: 100%;
+  border-radius: 0.2rem;
+}
+
+.player .meta {
+  text-align: center;
+}
+
+.player .meta span {
+  display: block;
+}
+
+.player .meta .name {
+  font-size: 0.48rem;
+  color: #dbdcd8;
+  margin-bottom: 0.2rem;
+}
+
+.player .meta .album {
+  font-size: 0.36rem;
+  color: #989b90;
+}
+
+.player .progress {
+  display: flex;
+  align-items: center;
+  height: 0.44rem;
+  line-height: 0.44rem;
+  padding: 0 0.28rem;
+  margin-top: 1.48rem;
+}
+
+.player .progress span {
+  display: block;
+  width: 0.8rem;
+  color: #FFF;
+}
+
+.player .progress .time {
+  margin-right: 0.5rem;
+}
+
+.player .progress .total {
+  color: #DDD;
+  margin-left: 0.5rem;
+}
+
+.player .progress .line {
+  flex: 1;
+  height: 0.053333rem;
+  background-color: #a7ac9c;
+  position: relative;
+}
+
+.player .progress .percent {
+  height: 100%;
+  width: 10%;
+  background-color: #c3473a;
+}
+
+.player .progress .cursor {
+  display: block;
+  width: 0.44rem;
+  height: 0.44rem;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-image: url(../images/cm2_fm_playbar_btn@2x.png);
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.player .controls {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  height: 1.24rem;
+  padding: 0 0.36rem;
+  position: absolute;
+  bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.player .controls a {
+  display: block;
+  width: 1.24rem;
+  background-position: center;
+  background-size: 1.32rem;
+}
+
+.player .controls .delete {
+  background-image: url(../images/cm2_fm_btn_delete_prs@2x.png);
+}
+
+.player .controls .love {
+  background-image: url(../images/cm2_fm_btn_love_prs@2x.png);
+}
+
+.player .controls .play_icn {
+  background-image: url(../images/cm2_fm_btn_play_prs@2x.png);
+  background-size: 1.813333rem;
+}
+
+.player .controls .pause {
+  background-image: url(../images/cm2_fm_btn_pause_prs@2x.png);
+  background-size: 1.813333rem;
+}
+
+.player .controls .next {
+  background-image: url(../images/cm2_fm_btn_next@2x.png);
+}
+
+.player .controls .discuz {
+  background-image: url(../images/cm2_fm_btn_cmt_number_prs@2x.png);
+}
