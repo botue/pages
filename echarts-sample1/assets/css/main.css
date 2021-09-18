@@ -1,0 +1,533 @@
+
+h2, h3, h4, ul, dl, dd {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
+    background-color: #081832;
+}
+
+/* 头部 */
+.header {
+    height: 100px;
+    padding: 0 25px;
+    background-color: #030829;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    width: 290px;
+    height: 80px;
+    background: url(../images/logo.png);
+    background-size: contain;
+    text-indent: -999px;
+}
+
+.header nav {
+    width: 72%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header a {
+    display: block;
+    color: #FFF;
+    font-size: 18px;
+    transition: color 0.5s;
+}
+
+.header a.active,
+.header a:hover {
+    color: #61d2f7;
+}
+
+.header .user {
+    width: 90px;
+    line-height: 1;
+}
+
+.main {
+    padding: 0 25px;
+}
+
+.main > .date {
+    display: block;
+    width: 130px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin: 30px 0 25px;
+    background-color: #04425f;
+    color: #FFF;
+    font-size: 13px;
+}
+
+/* 概况 */
+.survey {
+    display: flex;
+    height: 120px;
+}
+
+.survey > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 25px;
+    background-color: #034c6a;
+}
+
+.survey dt {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    font-size: 24px;
+    float: left;
+}
+
+.survey dd {
+    padding-left: 56px;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.survey dd.num {
+    font-size: 28px;
+}
+
+.survey .vehicle {
+    flex: 4;
+}
+
+.survey .vehicle .fa,
+.survey .vehicle .num {
+    color: #ffff43;
+}
+
+.survey .vehicle dt {
+    border-color: #ffff43;
+}
+
+.survey .mileage {
+    flex: 3;
+}
+
+.survey .mileage .fa,
+.survey .mileage .num {
+    color: #25f3e6;
+}
+
+.survey .mileage dt {
+    border-color: #25f3e6;
+}
+
+.survey .time {
+    flex: 3;
+}
+
+.survey .time .fa,
+.survey .time .num {
+    color: #ff4e4e;
+}
+
+.survey .time dt {
+    border-color: #ff4e4e;
+}
+
+.survey > div:last-child {
+    margin-right: 0;
+}
+
+/* 大数据 */
+.data {
+    padding-bottom: 44px;
+}
+
+.data img {
+    width: 100%;
+}
+
+.data .bg {
+    position: relative;
+}
+
+.data .label {
+    position: absolute;
+    left: 50%;
+    
+    display: block;
+    line-height: 1;
+    padding: 8px 16px;
+    background-color: #07658b;
+    border-radius: 30px;
+    white-space: nowrap;
+    color: #FFF;
+    transform: translate(-50%, -50%);
+}
+
+.data .charts, .data .table {
+    display: flex;
+}
+
+/* 图表 */
+.charts {
+    margin: 44px 0 0;
+}
+
+.charts .label {
+    font-size: 18px;
+}
+
+.charts .chart {
+    width: 100%;
+    height: 100%;
+    padding: 6% 7% 16%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.charts .locate {
+    padding: 3% 6% 8%;
+}
+
+.charts .alarm ul {
+    padding: 5% 6% 5% 0;
+}
+
+.charts .alarm li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2;
+    color: #EEE;
+    font-size: 16px;
+}
+
+.charts .alarm span {
+    width: 25%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.charts .alarm span:first-child {
+    text-align: right;
+}
+
+.charts .alarm span:nth-child(2) {
+    width: 36%;
+}
+
+.charts .alarm span:nth-child(3) {
+    text-align: left;
+}
+
+.charts .alarm span:last-child {
+    text-align: right;
+}
+
+.charts .title {
+    margin-bottom: 10px;
+}
+
+.charts .count span {
+    color: #ffff43;
+}
+
+.charts .up,
+.charts .down {
+    background-size: auto contain;
+    background-position: 40% center;
+    background-repeat: no-repeat;
+}
+
+.charts .up {
+    background-image: url(../images/up.png);
+}
+
+.charts .down {
+    background-image: url(../images/down.png);
+}
+
+.charts .title .y,
+.charts .title .t {
+    width: 30px;
+}
+
+.charts .title .y {
+    margin-left: 10px;
+}
+
+.charts .title .t {
+    margin-right: 10px;
+}
+
+.charts .alarm .y,
+.charts .alarm .t {
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    top: 3px;
+}
+
+.charts .alarm .y {
+    background-color: #0035f9;
+}
+
+.charts .alarm .t {
+    background-color: #25f3e6;
+}
+
+/* 表格 */
+.table .label {
+    font-size: 16px;
+}
+
+.table ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 8.5% 12% 0;
+    box-sizing: border-box;
+}
+
+.table .bg:first-child ul {
+    padding: 8.5% 8.2% 0;
+}
+
+.table li {
+    display: flex;
+    flex: 1;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #FFF;
+}
+
+.table li span {
+    display: block;
+    width: 20%;
+    text-align: center;
+}
+
+.table li span:last-child {
+    width: 30%;
+}
+
+.table li span:nth-child(2) {
+    width: 42%;
+}
+
+.table li:first-child {
+    line-height: 1;
+    color: #61d2f7;
+}
+
+/* (1366, 1600] */
+@media screen and (max-width: 1600px) {
+    .header {
+        height: 83px;
+    }
+
+    .header .logo {
+        width: 239px;
+        height: 66px;
+    }
+
+    .header a {
+        font-size: 16px;
+    }
+
+    .header .user {
+        width: 80px;
+    }
+
+    .survey {
+        height: 100px;
+    }
+
+    .survey dt {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 22px;
+    }
+
+    .survey dd {
+        font-size: 13px;
+        padding-left: 52px;
+    }
+
+    .survey dd.num {
+        font-size: 26px;
+    }
+
+    .charts .label {
+        font-size: 15px;
+    }
+
+    .table .label {
+        font-size: 14px;
+    }
+
+    .table li {
+        font-size: 14px;
+    }
+
+    .charts .alarm ul {
+        padding: 4% 2% 2% 0;
+    }
+
+    .charts .alarm li {
+        line-height: 1.7;
+        font-size: 14px;
+    }
+
+    .charts .alarm .y,
+    .charts .alarm .t {
+        height: 14px;
+    }
+
+    .charts .title .y,
+    .charts .title .t {
+        width: 25px;
+    }
+
+    .charts .title .y {
+        margin-left: 5px;
+    }
+
+    .charts .title .t {
+        margin-right: 5px;
+    }
+}
+
+/* [1280, 1366] */
+@media screen and (max-width: 1366px) {
+    .header {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .header .logo {
+        width: 203px;
+        height: 56px;
+    }
+
+    .header a {  
+        font-size: 15px;
+    }
+
+    .header .user {
+        width: 66px;
+    }
+
+    .main {
+        padding: 0 20px;
+    }
+
+    .main > .date {
+        font-size: 12px;
+        width: 110px;
+        height: 30px;
+        line-height: 30px;
+        margin: 20px 0;
+    }
+
+    .survey {
+        height: 85px;
+    }
+
+    .survey > div {
+        margin-right: 20px;
+    }
+
+    .survey dt {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 20px;
+    }
+
+    .survey dd {
+        font-size: 12px;
+        padding-left: 48px;
+    }
+
+    .survey dd.num {
+        font-size: 24px;
+    }
+
+    .charts .label {
+        font-size: 14px;
+    }
+
+    .table .label {
+        font-size: 13px;
+    }
+
+    .table ul {
+        padding: 7.5% 12% 0;
+    }
+
+    .table .bg:first-child ul {
+        padding: 7.5% 8.2% 0;
+    }
+
+    .table li {
+        font-size: 13px;
+    }
+
+    .table li:first-child {
+        line-height: 1.3;
+        color: #61d2f7;
+    }
+
+    .charts .alarm ul {
+        padding: 3% 1% 2% 0;
+    }
+
+    .charts .alarm li {
+        line-height: 1.8;
+        font-size: 13px;
+    }
+
+    .charts .alarm .y,
+    .charts .alarm .t {
+        height: 13px;
+    }
+
+    .charts .title .y,
+    .charts .title .t {
+        width: 20px;
+    }
+
+    .charts .title .y {
+        margin-left: 5px;
+    }
+
+    .charts .title .t {
+        margin-right: 5px;
+    }
+}
