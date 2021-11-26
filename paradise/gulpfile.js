@@ -1,36 +1,31 @@
 
-const gulp = require('gulp');
+const {src, dest, series, parallel, watch} = require('gulp');
+
+// const less = require('gulp-less');
+const sass = require('gulp-sass')(require('sass'));
+
+const postcss = require('gulp-postcss');
 
 const browserSync = require('browser-sync').create();
-
 const reload = browserSync.reload;
 
-const sass = require('gulp-sass');
 
-const sourcemaps = require('gulp-sourcemaps');
+function css() {
+  return src('scss/**/[!_]*.scss')
+    .pipe(sass())
+    .pipe(postcss([]))
+    .pipe(dest('./css'));
+}
 
-const filter = require('gulp-filter');
+function serve(cb) {
+  browserSync.init({
+    server: "./"
+  });
 
-gulp.task('server', () => {
-    browserSync.init({
-        server: './'
-    });
+  watch('./scss/*.scss', series(css)).on('change', reload);
+  watch('./*.html').on('change', reload);
 
-    gulp.watch('./scss/*', ['scss']);
-    gulp.watch('./*.html').on('change', reload);
-});
+  cb();
+}
 
-gulp.task('scss', () => {
-    gulp.src('./scss/*')
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./css'))
-        .pipe(filter('**/*.css'))
-        .pipe(reload({stream: true}))
-});
-
-gulp.task('default', ['server']);
-
-
-
+exports.default = series(serve, css);
