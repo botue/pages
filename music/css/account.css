@@ -57,9 +57,8 @@ input {
   left: 50%;
   top: 50%;
 }
-
 .play:after {
-  content: '';
+  content: "";
   display: block;
   border-width: 0.24rem;
   border-style: solid;
